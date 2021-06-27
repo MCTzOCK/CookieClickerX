@@ -146,6 +146,9 @@ a {
             width: 50%;
         }
     }
+    .product {
+        padding: 2px;
+    }
 }
 
 @media screen and (max-width: 800px) {
