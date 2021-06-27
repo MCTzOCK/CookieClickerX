@@ -5,6 +5,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
+/** Global Stuff */
 * {
     font-family: 'Dela Gothic One', cursive;
 }
@@ -20,8 +21,19 @@ body {
     height: 100%;
 }
 
-#gameArea {
+a {
+    color: black;
+}
+
+.middleArea {
     top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.bottomArea {
+    bottom: 0;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -29,6 +41,25 @@ body {
 
 #productName {
     text-align: center;
+}
+
+#shop {
+    top: 0;
+    left: 0;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background: #00a5ff;
+    z-index: 4;
+}
+
+#addOne {
+    color: #19ff3b;
+}
+
+#displays {
+    position: relative;
+    z-index: 5;
 }
 
 .cookie {
@@ -42,18 +73,43 @@ body {
     transform: translate(-10%, 38%);
 }
 
+.product {
+    border-style: solid;
+    border-radius: 6px;
+    padding: 4px;
+    background: #c61e6f;
+}
+
 /** Util Classes */
 
 .center {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
+.visually-hidden {
+    visibility: hidden;
+}
+
 /** Animations */
 
 .animationShrink {
     animation-name: shrink;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-fill-mode: both;
+}
+
+.animationRiseUp {
+    animation-name: riseUp;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.animationPopout {
+    animation: popout 1s ease;
 }
 
 @keyframes shrink {
@@ -65,5 +121,29 @@ body {
     }
     100% {
         width: 75%;
+    }
+}
+
+@keyframes riseUp {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes popout {
+    from {
+        transform: scale(0)
+    }
+    80% {
+        transform: scale(1.2)
+    }
+    to {
+        transform: scale(1)
     }
 }

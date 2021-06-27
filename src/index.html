@@ -10,20 +10,55 @@
     <script src="index.js"></script>
 </head>
 <body>
-    <h1 id="productName">CookieClicker</h1>
-    <div class="center">
-        <div id="cookieDisplayRoot" class="display">
-            <img src="img/cookie.png" class="smallCookie center" alt="cookies">
-            <span id="cookieDisplay">0</span>
+    <div class="topArea">
+        <h1 id="productName" class="animationPopout">CookieClicker</h1>
+        <div class="center">
+            <span id="addOne" class="visually-hidden">
+                +1
+            </span>
         </div>
-        <div id="grandmaDisplayRoot" class="display">
-            <img src="img/grandma.png" class="smallCookie center" alt="grandmas">
-            <span id="grandmaDisplay">0</span>
+        <div class="center" id="displays">
+            <div id="cookieDisplayRoot" class="display">
+                <img src="img/cookie.png" class="smallCookie center" alt="cookies">
+                <span id="cookieDisplay">0</span>
+            </div>
+            <div id="grandmaDisplayRoot" class="display">
+                <img src="img/grandma.png" class="smallCookie center" alt="grandmas">
+                <span id="grandmaDisplay">0</span>
+            </div>
         </div>
     </div>
-    <div id="gameArea">
+    <div class="middleArea">
         <div class="center">
             <img src="img/cookie.png" class="cookie" id="cookie">
+        </div>
+    </div>
+    <div class="bottomArea">
+        <h3>
+            <a href="javascript:toggleShop()">Shop</a>
+        </h3>
+    </div>
+    <div id="shop" class="hidden">
+        <div class="topArea">
+            <div class="center">
+                <h1 class="animationPopout">Shop</h1>
+            </div>
+        </div>
+        <div id="products" class="middleArea">
+            <div id="productGrandma" class="product center animationPopout" onclick="buyGrandma()">
+                <h1 style="color: #fff">Grandma</h1>
+                <p id="grandmaPrize">100 Cookies</p>
+                <a>Buy</a>
+            </div>
+            <div id="buyStatus" class="center" style="margin: 10%;">
+                <img src="img/x.png" width="25%" class="visually-hidden" id="buyFailed">
+                <img src="img/checkmark.png" width="25%" class="visually-hidden" id="buySucceeded">
+            </div>
+        </div>
+        <div class="bottomArea">
+            <h3>
+                <a href="javascript:toggleShop()">Close Shop</a>
+            </h3>
         </div>
     </div>
 </body>
