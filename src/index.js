@@ -6,11 +6,10 @@
 let allowClickAnimation = true
 let allowAddOneAnimation = true
 
-let cookies = 100
+let cookies = 0
 let grandmas = 0
 
 window.onload = function () {
-    toggleShop()
     document.getElementById('cookie').addEventListener('click', (event) => {
         cookies++;
         if (allowAddOneAnimation) {
