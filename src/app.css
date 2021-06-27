@@ -3,7 +3,30 @@
  * @copyright 2018-2021 Ben Siebert. All rights reserved.
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+* {
+    font-family: 'Dela Gothic One', cursive;
+}
+
 body, html {
     padding: 0;
     margin: 0;
+}
+
+body {
+    background: #00a5ff;
+    width: 100%;
+    height: 100%;
+}
+
+#gameArea {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#productName {
+    text-align: center;
 }
