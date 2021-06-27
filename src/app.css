@@ -30,3 +30,40 @@ body {
 #productName {
     text-align: center;
 }
+
+.cookie {
+    width: 75%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.smallCookie {
+    width: 10%;
+    transform: translate(-10%, 38%);
+}
+
+/** Util Classes */
+
+.center {
+    text-align: center;
+}
+
+/** Animations */
+
+.animationShrink {
+    animation-name: shrink;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes shrink {
+    0% {
+        width: 75%;
+    }
+    50% {
+        width: 60%;
+    }
+    100% {
+        width: 75%;
+    }
+}
