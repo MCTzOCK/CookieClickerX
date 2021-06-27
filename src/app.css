@@ -19,6 +19,7 @@ body {
     background: #00a5ff;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 a {
@@ -62,15 +63,32 @@ a {
     z-index: 5;
 }
 
-.cookie {
-    width: 75%;
-    text-align: center;
-    cursor: pointer;
+@media screen and (min-width: 800px) {
+    .cookie {
+        width: 50%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .smallCookie {
+        display: inline;
+        width: 5%;
+        transform: translate(-10%, 38%);
+    }
+
 }
 
-.smallCookie {
-    width: 10%;
-    transform: translate(-10%, 38%);
+@media screen and (max-width: 800px){
+    .cookie {
+        width: 75%;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .smallCookie {
+        width: 10%;
+        transform: translate(-10%, 38%);
+    }
 }
 
 .product {
@@ -112,15 +130,31 @@ a {
     animation: popout 1s ease;
 }
 
-@keyframes shrink {
-    0% {
-        width: 75%;
+@media screen and (min-width: 800px) {
+    @keyframes shrink {
+        0% {
+            width: 50%;
+        }
+        50% {
+            width: 35%;
+        }
+        100% {
+            width: 50%;
+        }
     }
-    50% {
-        width: 60%;
-    }
-    100% {
-        width: 75%;
+}
+
+@media screen and (max-width: 800px) {
+    @keyframes shrink {
+        0% {
+            width: 75%;
+        }
+        50% {
+            width: 60%;
+        }
+        100% {
+            width: 75%;
+        }
     }
 }
 
