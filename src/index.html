@@ -26,6 +26,10 @@
                 <img src="img/grandma.png" class="smallCookie center" alt="grandmas">
                 <span id="grandmaDisplay">0</span>
             </div>
+            <div id="factoryDisplayRoot" class="display">
+                <img src="img/helmet.png" class="smallCookie center" alt="factories">
+                <span id="factoryDisplay">0</span>
+            </div>
         </div>
     </div>
     <div class="middleArea">
@@ -45,14 +49,19 @@
             </div>
         </div>
         <div id="products" class="middleArea">
+            <div id="buyStatus" class="center" style="margin: 10%;">
+                <img src="img/x.png" width="15%" class="visually-hidden" id="buyFailed">
+                <img src="img/checkmark.png" width="15%" class="visually-hidden" id="buySucceeded">
+            </div>
             <div id="productGrandma" class="product center animationPopout" onclick="buyGrandma()">
                 <h1 style="color: #fff">Grandma</h1>
                 <p id="grandmaPrize">100 Cookies</p>
                 <a>Buy</a>
             </div>
-            <div id="buyStatus" class="center" style="margin: 10%;">
-                <img src="img/x.png" width="25%" class="visually-hidden" id="buyFailed">
-                <img src="img/checkmark.png" width="25%" class="visually-hidden" id="buySucceeded">
+            <div id="productFactory" class="product center animationPopout" style="margin: 4%" onclick="buyFactory()">
+                <h1 style="color: #fff">Factory</h1>
+                <p id="factoryPrize">1000 Cookies</p>
+                <a>Buy</a>
             </div>
         </div>
         <div class="bottomArea">

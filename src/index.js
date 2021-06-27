@@ -8,6 +8,7 @@ let allowAddOneAnimation = true
 
 let cookies = 0
 let grandmas = 0
+let factories = 0
 
 window.onload = function () {
     document.getElementById('cookie').addEventListener('click', (event) => {
@@ -35,12 +36,17 @@ window.onload = function () {
     setInterval(() => {
         document.getElementById('cookieDisplay').innerText = cookies.toString()
         document.getElementById('grandmaDisplay').innerText = grandmas.toString()
-        document.getElementById('grandmaPrize').innerText = (grandmas * 100 + 100).toString() + " Cookies";
+        document.getElementById('grandmaPrize').innerText = (grandmas * 100 + 100).toString() + " Cookies"
+        document.getElementById('factoryDisplay').innerText = factories.toString()
+        document.getElementById('factoryPrize').innerText = (factories * 1000 + 1000).toString() + " Cookies"
     }, 50);
 
     setInterval(() => {
         for (let i = 0; i < grandmas; i++) {
-            cookies++;
+            cookies++
+        }
+        for (let i = 0; i < factories; i++) {
+            cookies += 5
         }
     }, 1500)
 }
@@ -55,22 +61,40 @@ function toggleShop() {
 
 function buyGrandma() {
     let gPrize = grandmas * 100 + 100;
-
     if (cookies >= gPrize) {
-        grandmas++;
+        grandmas++
         cookies = cookies - gPrize
-        document.getElementById('buySucceeded').classList.remove("visually-hidden")
-        document.getElementById('buySucceeded').classList.add("animationPopout")
-        setTimeout(() => {
-            document.getElementById('buySucceeded').classList.add("visually-hidden")
-            document.getElementById('buySucceeded').classList.remove("animationPopout")
-        }, 1000)
+        buySucceeded()
     } else {
-        document.getElementById('buyFailed').classList.remove("visually-hidden")
-        document.getElementById('buyFailed').classList.add("animationPopout")
-        setTimeout(() => {
-            document.getElementById('buyFailed').classList.add("visually-hidden")
-            document.getElementById('buyFailed').classList.remove("animationPopout")
-        }, 1000)
+        buyFailed()
     }
+}
+
+function buyFactory() {
+    let fPrize = factories * 1000 + 1000
+    if (cookies >= fPrize) {
+        factories++
+        cookies = cookies - fPrize
+        buySucceeded()
+    } else {
+        buyFailed()
+    }
+}
+
+function buySucceeded() {
+    document.getElementById('buySucceeded').classList.remove("visually-hidden")
+    document.getElementById('buySucceeded').classList.add("animationPopout")
+    setTimeout(() => {
+        document.getElementById('buySucceeded').classList.add("visually-hidden")
+        document.getElementById('buySucceeded').classList.remove("animationPopout")
+    }, 1000)
+}
+
+function buyFailed() {
+    document.getElementById('buyFailed').classList.remove("visually-hidden")
+    document.getElementById('buyFailed').classList.add("animationPopout")
+    setTimeout(() => {
+        document.getElementById('buyFailed').classList.add("visually-hidden")
+        document.getElementById('buyFailed').classList.remove("animationPopout")
+    }, 1000)
 }
